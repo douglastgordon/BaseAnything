@@ -130,6 +130,23 @@ my_base_4.from_duotrigesimal(num) #converts num from base32
 my_base_4.from_hexatrigesimal(num) #converts num from base36
 ```
 
+###Math
+
+You can do mathematical operations with numbers from your number system.
+
+```ruby
+my_base_4 = BaseAnything::NumberSystem.new(['@', '#', '$', '%', '&'])
+num1 = '&$'
+num2 = '%#'
+
+my_base_4.add(num1, num2)
+my_base_4.subtract(num1, num2)
+my_base_4.multiply(num1, num2)
+my_base_4.divide(num1, num2)
+my_base_4.modulo(num1, num2)
+my_base_4.exponent(num1, num2)
+
+```
 
 ## Contributing
 

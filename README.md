@@ -3,15 +3,21 @@
 BaseAnything is a Ruby Gem that allows you to create a number system of any base using any symbols you want.
 
 ##Installation
+Add this line to your application's Gemfile:
+
 ```ruby
-gem install 'baseanything'
+gem 'baseanything'
 ```
 
+And then execute:
+```ruby
+    $ bundle
+```
+Or install it yourself as:
+```ruby
+    $ gem install baseanything
+```
 ##Usage
-
-```ruby
-require 'baseanything'
-```
 
 ###Making your own number system
 
@@ -124,3 +130,8 @@ my_base_4.from_trigesimal(num) #converts num from base30
 my_base_4.from_duotrigesimal(num) #converts num from base32
 my_base_4.from_hexatrigesimal(num) #converts num from base36
 ```
+
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/DouglasTGordon/BaseAnything.

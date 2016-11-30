@@ -53,4 +53,25 @@ describe '#to_base' do
     expect(base_four_sys.to_undecimal("1312")).to eq("A8")
   end
 
+  it "converts base7 to base2" do
+    expect(base_seven_sys.to_binary("6433")).to eq("100011100110")
+    expect(base_seven_sys.to_binary("203201")).to eq("1000011110110110")
+    expect(base_seven_sys.to_binary("5510")).to eq("11110101111")
+    expect(base_seven_sys.to_binary("5")).to eq("101")
+  end
+
+  it "converts base7 to base4" do
+    expect(base_seven_sys.to_quaternary("6433")).to eq("203212")
+    expect(base_seven_sys.to_quaternary("203201")).to eq("20132312")
+    expect(base_seven_sys.to_quaternary("5510")).to eq("132233")
+    expect(base_seven_sys.to_quaternary("5")).to eq("11")
+  end
+
+  it "converts base7 to base11" do
+    expect(base_seven_sys.to_undecimal("6433")).to eq("1791")
+    expect(base_seven_sys.to_undecimal("203201")).to eq("24114")
+    expect(base_seven_sys.to_undecimal("5510")).to eq("1529")
+    expect(base_seven_sys.to_undecimal("5")).to eq("5")
+  end
+
 end

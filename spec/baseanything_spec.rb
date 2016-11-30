@@ -95,4 +95,20 @@ describe '#to_base' do
     expect(base_eleven_sys.to_heptary("5")).to eq("5")
   end
 
+  describe '#from_base' do
+    crazy_base6 = ['%', '9', '(', '#', 'B', 'é']
+    let(:crazy_base6_sys) { NumberSystem.new(crazy_base6) }
+    it "converts from crazy base6" do
+      expect(crazy_base6_sys.from_binary("110001110001001101101")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_quaternary("12032021231")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_octal("6161155")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_decimal("1630829")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_tetradecimal("30647B")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_pentadecimal("22331E")).to eq("éBéB(%Bé")
+      expect(crazy_base6_sys.from_hexavigesimal("4LN75")).to eq("éBéB(%Bé")
+    end
+
+
+  end
+
 end

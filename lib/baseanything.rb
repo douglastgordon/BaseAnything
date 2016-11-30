@@ -1,4 +1,5 @@
 module BaseAnything
+
   class NumberSystem
 
     def initialize(arr)
@@ -60,32 +61,32 @@ module BaseAnything
 
     def add(num1, num2)
       decimal = own_to_dec(num1) + own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
     def subtract(num1, num2)
       decimal = own_to_dec(num1) - own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
     def multiply(num1, num2)
       decimal = own_to_dec(num1) * own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
     def divide(num1, num2)
       decimal = own_to_dec(num1) / own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
     def modulo(num1, num2)
       decimal = own_to_dec(num1) % own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
     def exponent(num1, num2)
       decimal = own_to_dec(num1) ** own_to_dec(num2)
-      from_base(decimal, 10)
+      from_base(decimal.to_s, 10)
     end
 
 

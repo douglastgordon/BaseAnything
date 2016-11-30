@@ -113,7 +113,6 @@ class NumberSystem
   def method_missing(name, num)
     name = name.to_s
     base = FIND_BASE["to_#{name[3..-1]}"] if name[0..2] == "to_"
-    debugger
     to_base(num, base)
   end
 

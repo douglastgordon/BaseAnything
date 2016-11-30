@@ -44,9 +44,7 @@ module BaseAnything
         num -= to_remove
         highest_quot -= 1
       end
-
       output
-
     end
 
     def method_missing(name, num)
@@ -60,71 +58,103 @@ module BaseAnything
       end
     end
 
+    def add(num1, num2)
+      decimal = own_to_dec(num1) + own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+    def subtract(num1, num2)
+      decimal = own_to_dec(num1) - own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+    def multiply(num1, num2)
+      decimal = own_to_dec(num1) * own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+    def divide(num1, num2)
+      decimal = own_to_dec(num1) / own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+    def modulo(num1, num2)
+      decimal = own_to_dec(num1) % own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+    def exponent(num1, num2)
+      decimal = own_to_dec(num1) ** own_to_dec(num2)
+      from_base(decimal, 10)
+    end
+
+
     private
 
+    ANY_BASE = {
+      '0' => '0',
+      '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      '10' => 'A',
+      '11' => 'B',
+      '12' => 'C',
+      '13' => 'D',
+      '14' => 'E',
+      '15' => 'F',
+      '16' => 'G',
+      '17' => 'H',
+      '18' => 'I',
+      '19' => 'J',
+      '20' => 'K',
+      '21' => 'L',
+      '22' => 'M',
+      '23' => 'N',
+      '24' => 'O',
+      '25' => 'P',
+      '26' => 'Q',
+      '27' => 'R',
+      '28' => 'S',
+      '29' => 'T',
+      '30' => 'U',
+      '31' => 'V',
+      '32' => 'W',
+      '33' => 'X',
+      '34' => 'Y',
+      '35' => 'Z'
+    }
 
-      ANY_BASE = {
-        '0' => '0',
-        '1' => '1',
-        '2' => '2',
-        '3' => '3',
-        '4' => '4',
-        '5' => '5',
-        '6' => '6',
-        '7' => '7',
-        '8' => '8',
-        '9' => '9',
-        '10' => 'A',
-        '11' => 'B',
-        '12' => 'C',
-        '13' => 'D',
-        '14' => 'E',
-        '15' => 'F',
-        '16' => 'G',
-        '17' => 'H',
-        '18' => 'I',
-        '19' => 'J',
-        '20' => 'K',
-        '21' => 'L',
-        '22' => 'M',
-        '23' => 'N',
-        '24' => 'O',
-        '25' => 'P',
-        '26' => 'Q',
-        '27' => 'R',
-        '28' => 'S',
-        '29' => 'T',
-        '30' => 'U',
-        '31' => 'V',
-        '32' => 'W',
-        '33' => 'X',
-        '34' => 'Y',
-        '35' => 'Z'
-      }
+    FIND_BASE = {
+      'binary' => 2,
+      'ternary' => 3,
+      'quaternary' => 4,
+      'quinary' => 5,
+      'senary' => 6,
+      'heptary' => 7,
+      'octal' => 8,
+      'nonary' => 9,
+      'decimal' => 10,
+      'undecimal' => 11,
+      'duodecimal' => 12,
+      'tridecimal' => 13,
+      'tetradecimal' => 14,
+      'pentadecimal' => 15,
+      'hexadecimal' => 16,
+      'vigesimal' => 20,
+      'hexavigesimal' => 24,
+      'heptavigesimal' => 27,
+      'trigesimal' => 30,
+      'duotrigesimal' => 32,
+      'hexatrigesimal' => 36
+    }
 
-      FIND_BASE = {
-        'binary' => 2,
-        'ternary' => 3,
-        'quaternary' => 4,
-        'quinary' => 5,
-        'senary' => 6,
-        'heptary' => 7,
-        'octal' => 8,
-        'nonary' => 9,
-        'decimal' => 10,
-        'undecimal' => 11,
-        'duodecimal' => 12,
-        'tridecimal' => 13,
-        'tetradecimal' => 14,
-        'pentadecimal' => 15,
-        'hexadecimal' => 16,
-        'vigesimal' => 20,
-        'hexavigesimal' => 24,
-        'heptavigesimal' => 27,
-        'trigesimal' => 30,
-        'duotrigesimal' => 32,
-        'hexatrigesimal' => 36
-      }
+
 
     def make_correspondance_hash(arr)
       hash = {}

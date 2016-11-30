@@ -80,7 +80,6 @@ my_base_4.to_decimal(num) #converts num to base10
 my_base_4.to_undecimal(num) #converts num to base11
 my_base_4.to_duodecimal(num) #converts num to base12
 my_base_4.to_tridecimal(num) #converts num to base13
-
 my_base_4.to_tetradecimal(num) #converts num to base14
 my_base_4.to_pentadecimal(num) #converts num to base15
 my_base_4.to_hexadecimal(num) #converts num to base16
@@ -120,7 +119,6 @@ my_base_4.from_decimal(num) #converts num from base10
 my_base_4.from_undecimal(num) #converts num from base11
 my_base_4.from_duodecimal(num) #converts num from base12
 my_base_4.from_tridecimal(num) #converts num from base13
-
 my_base_4.from_tetradecimal(num) #converts num from base14
 my_base_4.from_pentadecimal(num) #converts num from base15
 my_base_4.from_hexadecimal(num) #converts num from base16

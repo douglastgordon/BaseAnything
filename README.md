@@ -1,6 +1,6 @@
 #BaseAnything
 
-BaseAnything is a Ruby Gem that allows you to create a number system of any base.
+BaseAnything is a Ruby Gem that allows you to create a number system of any base using any symbols you want.
 
 ##Usage
 

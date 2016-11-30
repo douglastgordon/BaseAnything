@@ -112,19 +112,18 @@ class NumberSystem
 
   def method_missing(name, num)
     name = name.to_s
-    if name[0..2] == "to_"
-      base = find_base[name[3..-1]]
-    end
+    base = FIND_BASE["to_#{name[3..-1]}"] if name[0..2] == "to_"
+    debugger
     to_base(num, base)
   end
 
 end
 
 # arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-arr2 = ['0', '1', '2', '3']
-num_sys = NumberSystem.new(arr2)
-
-# num_sys.to_dec('91')
-
-p num_sys.to_base('11020', 10)
-p num_sys.to_bin('123')
+# arr2 = ['0', '1', '2', '3']
+# num_sys = NumberSystem.new(arr2)
+#
+# # num_sys.to_dec('91')
+#
+# p num_sys.to_base('11020', 10)
+# p num_sys.to_bin('123')

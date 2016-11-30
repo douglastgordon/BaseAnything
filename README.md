@@ -3,6 +3,7 @@
 BaseAnything is a Ruby Gem that allows you to create a number system of any base using any symbols you want.
 
 ##Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby

@@ -3,16 +3,21 @@ require 'baseanything'
 
 describe '#to_base' do
   base_two = ['0', '1']
+  base_three = ['0', '', '2']
   base_four = ['0', '1', '2', '3']
   base_seven = ['0', '1', '2', '3', '4', '5', '6']
   base_eleven = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A']
-  let(:base_two_sys) { NumberSystem.new(base_two) }
-  let(:base_four_sys) { NumberSystem.new(base_four) }
-  let(:base_seven_sys) { NumberSystem.new(base_seven) }
-  let(:base_eleven_sys) { NumberSystem.new(base_eleven) }
+
+  let(:base_two_sys) { BaseAnything::NumberSystem.new(base_two) }
+  let(:base_three_sys) { BaseAnything::NumberSystem.new(base_three) }
+  let(:base_four_sys) { BaseAnything::NumberSystem.new(base_four) }
+  let(:base_seven_sys) { BaseAnything::NumberSystem.new(base_seven) }
+  let(:base_eleven_sys) { BaseAnything::NumberSystem.new(base_eleven) }
 
   it "converts base2 to base4" do
     expect(base_two_sys.to_quaternary("0")).to eq("0")
+    expect(base_two_sys.to_quaternary("56")).to raise_error
+    expect(base_two_sys.to_quaternary("")).to raise_error
     expect(base_two_sys.to_quaternary("1")).to eq("1")
     expect(base_two_sys.to_quaternary("100")).to eq("10")
     expect(base_two_sys.to_quaternary("1011")).to eq("23")
@@ -97,7 +102,7 @@ describe '#to_base' do
 
   describe '#from_base' do
     crazy_base6 = ['%', '9', '(', '#', 'B', 'é']
-    let(:crazy_base6_sys) { NumberSystem.new(crazy_base6) }
+    let(:crazy_base6_sys) { BaseAnything::NumberSystem.new(crazy_base6) }
     it "converts from crazy base6" do
       expect(crazy_base6_sys.from_binary("110001110001001101101")).to eq("éBéB(%Bé")
       expect(crazy_base6_sys.from_quaternary("12032021231")).to eq("éBéB(%Bé")
